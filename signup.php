@@ -16,29 +16,29 @@ session_start();
         if(!empty($username) && !empty($password) && !is_numeric($username)){
 
             //save to database
-            $q1 = "select * from login where username = '$username'";
+            $q1 = "SELECT * from login where username = '$username'";
             $result = mysqli_query($con,$q1);
             $row1 = mysqli_num_rows($result);
             if($rolename == 't'){
-                $q1 = "select * from teacher where eid = '$usn'";
+                $q1 = "SELECT * from teacher where eid = '$usn'";
                 $result = mysqli_query($con,$q1);
                 $row2 = mysqli_num_rows($result);
             }else{
-                $q1 = "select * from student where usn = '$usn'";
+                $q1 = "SELECT * from student where usn = '$usn'";
                 $result = mysqli_query($con,$q1);
                 $row2 = mysqli_num_rows($result);
             }
             if($row1 == 0 && $row2 == 0){
-                $query1 = "insert into login (username,password,rolename) values ('$username','$password','$rolename')";
+                $query1 = "INSERT into login (username,password,rolename) values ('$username','$password','$rolename')";
 
                 mysqli_query($con,$query1);
                 if($rolename == 't')
                 {
-                    $query2 = "insert into teacher (eid,name,phone) values ('$usn','$name','$phone')";
-                    $query3 = "insert into t_login (eid,username) values ('$usn','$username')";
+                    $query2 = "INSERT into teacher (eid,name,phone) values ('$usn','$name','$phone')";
+                    $query3 = "INSERT into t_login (eid,username) values ('$usn','$username')";
                 }else{
-                    $query2 = "insert into student (usn,Name,Phone) values ('$usn','$name','$phone')";
-                    $query3 = "insert into s_login (usn,username) values ('$usn','$username')";
+                    $query2 = "INSERT into student (usn,Name,Phone) values ('$usn','$name','$phone')";
+                    $query3 = "INSERT into s_login (usn,username) values ('$usn','$username')";
                 }
                 mysqli_query($con,$query2);
                 mysqli_query($con,$query3);

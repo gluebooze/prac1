@@ -12,7 +12,7 @@ session_start();
         $name = $_POST['name'];
         $phone = $_POST['phone'];
         if(!empty($usn) && !empty($name)){
-            $query = "insert into student (usn,Name,Phone) values ('$usn','$name','$phone')";
+            $query = "INSERT into student (usn,Name,Phone) values ('$usn','$name','$phone')";
             // $query = "If Not Exists(select * from student where usn='$usn')
             //             Begin
             //             insert into student (usn,Name,Phone) values ('$usn','$name','$phone')

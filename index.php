@@ -6,14 +6,14 @@ session_start();
   $user_data = check_login($con);
   if($_SESSION['rolename'] == 't'){
       $tempeid = $_SESSION['username'];
-      $result = mysqli_query($con,"select eid from t_login where username = '$tempeid' ")->fetch_assoc();
+      $result = mysqli_query($con,"SELECT eid from t_login where username = '$tempeid' ")->fetch_assoc();
       $_SESSION['eid'] = $result['eid'];
       header("location: teacher/home.php");
       die;
   }
   else if($_SESSION['rolename'] == 's'){
       $tempusn = $_SESSION['username'];
-      $result = mysqli_query($con,"select usn from s_login where username = '$tempusn' ")->fetch_assoc();
+      $result = mysqli_query($con,"SELECT usn from s_login where username = '$tempusn' ")->fetch_assoc();
       $_SESSION['usn'] = $result['usn'];
       header("location: student/home.php");
       die;

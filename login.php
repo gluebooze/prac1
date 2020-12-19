@@ -13,7 +13,7 @@ session_start();
 
             //read from database
             echo $username." ".$password." ";
-            $query = "select * from login where username = '$username' && password = '$password'";
+            $query = "SELECT * from login where username = '$username' && password = '$password'";
             $result = mysqli_query($con,$query);
 
             $user_data = mysqli_fetch_assoc($result);
@@ -23,7 +23,7 @@ session_start();
                 echo "please enter some valider information!!";
             }
             else{
-                
+
                 $_SESSION['username'] = $user_data['username'];
                 $_SESSION['rolename'] = $user_data['rolename'];
                 header("location: index.php");

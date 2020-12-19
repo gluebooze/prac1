@@ -13,13 +13,13 @@ session_start();
         if(!empty($subcode) && !empty($name)){
 
             //checking for eid
-            $query = "select * from t_login where username = '$username'";
+            $query = "SELECT * from t_login where username = '$username'";
             $result = mysqli_query($con,$query);
             $user_data = mysqli_fetch_assoc($result);
             $eid = $user_data['eid'];
 
             //addding subject
-            $query = "insert into subject (subcode,subname,eid) values ('$subcode','$name','$eid')";
+            $query = "INSERT into subject (subcode,subname,eid) values ('$subcode','$name','$eid')";
             // $query = "If Not Exists(select * from student where usn='$usn')
             //             Begin
             //             insert into student (usn,Name,Phone) values ('$usn','$name','$phone')
