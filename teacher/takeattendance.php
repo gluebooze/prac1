@@ -10,11 +10,28 @@ session_start();
         //print_r($chk[0]);
         $sqldate = date("Y-m-d", strtotime($_POST['date']));
         // UPDATE attends SET attended = attended + 1
-        mysqli_query($con,"UPDATE subject SET total_class = total_class + 1");
-        for($i =0;$i<count($chk);$i++){
+        mysqli_query($con,"UPDATE subject SET total_class = total_class + 1 where subcode = '$subcode'");
 
-            mysqli_query($con,"call takeatt('$subcode','$chk[$i]','$sqldate');");
+        $query = "SELECT at.usn , s.Name from attends as at , student as s where at.usn = s.usn AND at.subcode = '$subcode'";
+        $result = mysqli_query($con,$query);
+        while($rows = $result->fetch_assoc()){
+            $usn = $rows['usn'];
+            if (in_array($usn, $chk))
+                mysqli_query($con,"call takeatt('$subcode','$usn','$sqldate');");
+                //INSERT into attendance VALUES(isubcode,iusn,idate,0);
+            else {
+                mysqli_query($con,"INSERT into attendance VALUES('$subcode','$usn','$sqldate',0)");
+            }
         }
+        // for($i =0;$i<$rowcount;$i++){
+        //     if (in_array("$data_set[$i]", $chk))
+        //         print_r($data_set[$i]);
+        // }
+
+        // for($i =0;$i<count($chk);$i++){
+        //
+        //     mysqli_query($con,"call takeatt('$subcode','$chk[$i]','$sqldate');");
+        // }
 
     }
 
