@@ -3,21 +3,11 @@ session_start();
     include("connection.php");
     include("functions.php");
     $subcode = $_SESSION['subcode'];
+    $sqldate = $_SESSION['date'];
 
-    if(isset($_REQUEST["submit"])){
-        $chk =   $_REQUEST["chk"];
-        //$a = implode(",",$chk);
-        //print_r($chk[0]);
-        for($i =0;$i<count($chk);$i++){
 
-            mysqli_query($con,"INSERT into attends (subcode,usn) values ('$subcode','$chk[$i]')");
-        }
-        header("location:home.php");
-        die;
 
-    }
-
-    $query = "select * from student ";
+    $query = "SELECT at.usn , s.Name , at.status from attendance as at , student as s where at.usn = s.usn AND at.subcode = '$subcode' AND at.date = '$sqldate'";
     $result = mysqli_query($con,$query);
     $rowcount = mysqli_num_rows($result);
 
@@ -28,7 +18,8 @@ session_start();
     <tr>
         <td><b>usn</b></td>
         <td><b>name</b></td>
-        <td></td>
+        <td><b>status</b></td>
+
     </tr>
 <?php
     for($i=1;$i<=$rowcount;$i++){
@@ -37,11 +28,17 @@ session_start();
     <tr>
         <td><?php echo $row["usn"] ?></td>
         <td><?php echo $row["Name"] ?></td>
-        <td> <input type="checkbox" name="chk[]" value="<?php echo $row["usn"] ?>"> </td>
+        <td><?php if($row["status"] == 1)
+                    echo "present";
+                  else {
+                      echo "absent";
+                  }?></td>
+
     </tr>
 <?php
     }
  ?>
-</table>
-    <input type="submit" name="submit" value="submit">
+</table><br>
+<a href="home.php">Go to home</a>
+
 </form>

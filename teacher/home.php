@@ -14,6 +14,7 @@ session_start();
         <title></title>
     </head>
     <body>
+        <a href="logout.php" align="right">logout</a>
         <br><br>
         <a href="addstudent.php">
             <button>Add Student</button>
@@ -78,6 +79,69 @@ session_start();
                 $_SESSION['subcode'] = $rows2['subcode'];
                 //print_r($_SESSION['subname']);
                 header("location:takeattendance.php");
+                die;
+            }
+        ?>
+
+        view attendence <br>
+        <form method="post">
+
+
+        <select name="subjectname2">
+            <?php
+            $tempeid = $_SESSION['eid'];
+            $query1 = "SELECT subname FROM subject where eid = $tempeid";
+            $result = mysqli_query($con,$query1);
+
+                while($rows = $result->fetch_assoc()){
+                    $subname = $rows['subname'];
+                    echo "<option value='$subname'>$subname</option>";
+                }
+            ?>
+
+        </select>
+        <input type="submit" name="go2" />
+        </form>
+        <?php
+            if(isset($_POST['go2'])){
+                $result3 = mysqli_query($con,"SELECT subcode from subject where subname = '$_POST[subjectname2]'");
+                $rows3 = $result3->fetch_assoc();
+                $_SESSION['subcode'] = $rows3['subcode'];
+                //print_r($_SESSION['subname']);
+                header("location:viewsubattendance.php");
+                die;
+            }
+        ?>
+
+        view attendence on date <br>
+        <form method="post">
+
+
+        <select name="subjectname3">
+            <?php
+            $tempeid = $_SESSION['eid'];
+            $query1 = "SELECT subname FROM subject where eid = $tempeid";
+            $result = mysqli_query($con,$query1);
+
+                while($rows = $result->fetch_assoc()){
+                    $subname = $rows['subname'];
+                    echo "<option value='$subname'>$subname</option>";
+                }
+            ?>
+
+        </select>
+        <input type="date" name="date" value="date"><br><br>
+        <input type="submit" name="go3" />
+        </form>
+        <?php
+            if(isset($_POST['go3'])){
+                $result3 = mysqli_query($con,"SELECT subcode from subject where subname = '$_POST[subjectname3]'");
+                $rows3 = $result3->fetch_assoc();
+                $_SESSION['subcode'] = $rows3['subcode'];
+                $sqldate = date("Y-m-d", strtotime($_POST['date']));
+                $_SESSION['date'] = $sqldate;
+                //print_r($_SESSION['subname']);
+                header("location:viewdasubattendance.php");
                 die;
             }
         ?>

@@ -23,6 +23,8 @@ session_start();
                 mysqli_query($con,"INSERT into attendance VALUES('$subcode','$usn','$sqldate',0)");
             }
         }
+        header("location:home.php");
+        die;
         // for($i =0;$i<$rowcount;$i++){
         //     if (in_array("$data_set[$i]", $chk))
         //         print_r($data_set[$i]);

@@ -44,7 +44,16 @@ session_start();
                 mysqli_query($con,$query3);
                 header("location: login.php");
                 die;
-            }else{
+            }else if($row1 == 0 && $rolename == 's'){
+                $query1 = "INSERT into login (username,password,rolename) values ('$username','$password','$rolename')";
+
+                mysqli_query($con,$query1);
+                $query2 = "INSERT into student (usn,Name,Phone) values ('$usn','$name','$phone')";
+                $query3 = "INSERT into s_login (usn,username) values ('$usn','$username')";
+                mysqli_query($con,$query2);
+                mysqli_query($con,$query3);
+            }
+            else{
                 echo "user already exist!";
             }
         }
