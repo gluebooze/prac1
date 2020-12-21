@@ -75,59 +75,62 @@ session_start();
 
 </head>
 
-<body>
-    <style type="text/css">
-        #text {
-            height: 25px;
-            border-radius: 5px;
-            padding: 4px;
-            border: solid thin #aaa;
+<body style="background-color:skyblue;">
+  <center>
+    <style>
+        .butta{
+        background-color: #008080 ;
+        border-color: black;
+        border-style: solid;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+        .butt1{
+        background-color: tomato ;
+        border-color: black;
+        border-style: solid;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
         }
 
-        #button {
-            background-color: gray;
-            /* Grey */
-            width: 100px;
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
-
-        #box {
-            background-color: gray;
-            margin: auto;
-            width: 300px;
-            padding: 20px;
-        }
-    </style>
+      </style>
     <div id="box">
         <form method="post">
-            <div style="font-size: 25px; margin:10px;">Signup</div><br>
-            <div style="font-size: 15px; margin:10px;">Username</div>
+            <div class="butta">Signup</div><br>
+            <div class="butta">Username</div>
             <input type="text" name="username"><br><br>
-            <div style="font-size: 15px; margin:10px;">password</div>
+            <div class="butta">password</div>
             <input type="password" name="password" ><br><br>
-            <select name="rolename">
+            <select name="rolename" class="butt1">
               <option value="t">Teacher</option>
               <option value="s">Student</option>
 
             </select><br><br>
-            <div style="font-size: 15px; margin:10px;">eid/usn</div>
+            <div class="butta">eid/usn</div>
             <input type="text" name="usn"><br><br>
-            <div style="font-size: 15px; margin:10px;">Name</div>
+            <div class="butta">Name</div>
             <input type="text" name="name"><br><br>
-            <div style="font-size: 15px; margin:10px;">Phone no</div>
+            <div class="butta"">Phone no</div>
             <input type="number" name="phone"><br><br>
-            <input type="submit" value="Signup"><br><br>
+            <input type="submit" value="Signup" class="butt1"><br><br>
 
             <a href="login.php">Click to Login</a>
         </form>
 
     </div>
+  </center>
 </body>
 
 </html>
