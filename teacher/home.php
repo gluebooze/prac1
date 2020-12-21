@@ -107,6 +107,7 @@ session_start();
                 $result3 = mysqli_query($con,"SELECT subcode from subject where subname = '$_POST[subjectname2]'");
                 $rows3 = $result3->fetch_assoc();
                 $_SESSION['subcode'] = $rows3['subcode'];
+                $_SESSION['subname'] = $_POST['subjectname2'];
                 //print_r($_SESSION['subname']);
                 header("location:viewsubattendance.php");
                 die;
