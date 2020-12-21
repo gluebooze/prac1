@@ -1,3 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body style="background-color:skyblue">
+  <style>
+      .butta{
+      background-color: #008080 ;
+      border-color: black;
+      border-style: solid;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
+      .butt1{
+      background-color: tomato ;
+      border-color: black;
+      border-style: solid;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
+      </style>
 <?php
 session_start();
     include("connection.php");
@@ -45,12 +78,16 @@ session_start();
 
 ?>
 <form method="post">
-select date for attendance <br>
-<input type="date" name="date" value="date"><br><br>
+  <center>
+<p style="font-size:20px; font-family:sans-serif;"><i>Select date for attendance </p>
+
+<br>
+<input type="date" name="date" value="date" class="butt1"><br><br><br><br>
+</center>
 <table border="1" align="center">
     <tr>
-        <td><b>usn</b></td>
-        <td><b>name</b></td>
+        <td class="butt1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usn</b></td>
+        <td class="butt1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</b></td>
         <td></td>
     </tr>
 <?php
@@ -58,13 +95,20 @@ select date for attendance <br>
         $row = mysqli_fetch_array($result);
 ?>
     <tr>
-        <td><?php echo $row["usn"] ?></td>
-        <td><?php echo $row["Name"] ?></td>
-        <td> <input type="checkbox" name="chk[]" value="<?php echo $row["usn"] ?>"> </td>
+        <td class="butt1"><?php echo $row["usn"] ?></td>
+        <td class="butt1"><?php echo $row["Name"] ?></td>
+        <td class="butta"> <input type="checkbox" name="chk[]" value="<?php echo $row["usn"] ?>"> </td>
     </tr>
 <?php
     }
  ?>
+
 </table>
-    <input type="submit" name="submit" value="submit">
+<center>
+  <br><br>
+    <input type="submit" name="submit" value="submit " class="butt1">
 </form>
+</center>
+
+</body>
+</html>

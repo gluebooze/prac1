@@ -28,7 +28,7 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    <a href="logout.php">Logout</a>
+    <a href="logout.php" style="background-color: #008080;">Logout</a>
     <h1>This is index page</h1>
     <br>
         Hello User.
