@@ -2,7 +2,7 @@
 <html>
 <head>
 </head>
-<body>
+<body style="background-color:skyblue">
   <style>
       .butta{
       background-color: #008080 ;
@@ -78,12 +78,16 @@ session_start();
 
 ?>
 <form method="post">
-select date for attendance <br>
-<input type="date" name="date" value="date"><br><br><br><br>
+  <center>
+<p style="font-size:20px; font-family:sans-serif;"><i>Select date for attendance </p>
+
+<br>
+<input type="date" name="date" value="date" class="butt1"><br><br><br><br>
+</center>
 <table border="1" align="center">
     <tr>
-        <td class="butt1"><b>usn</b></td><br><br><br><br>
-        <td class="butt1"><b>name</b></td><br><br><br><br>
+        <td class="butt1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usn</b></td>
+        <td class="butt1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</b></td>
         <td></td>
     </tr>
 <?php
@@ -91,16 +95,20 @@ select date for attendance <br>
         $row = mysqli_fetch_array($result);
 ?>
     <tr>
-        <td class="butt1"><?php echo $row["usn"] ?></td><br><br><br><br>
-        <td class="butt1"><?php echo $row["Name"] ?></td><br><br><br><br>
-        <td> <input type="checkbox" name="chk[]" value="<?php echo $row["usn"] ?>"> </td>
+        <td class="butt1"><?php echo $row["usn"] ?></td>
+        <td class="butt1"><?php echo $row["Name"] ?></td>
+        <td class="butta"> <input type="checkbox" name="chk[]" value="<?php echo $row["usn"] ?>"> </td>
     </tr>
 <?php
     }
  ?>
+
 </table>
-    <input type="submit" name="submit" value="submit">
+<center>
+  <br><br>
+    <input type="submit" name="submit" value="submit " class="butt1">
 </form>
+</center>
 
 </body>
 </html>
