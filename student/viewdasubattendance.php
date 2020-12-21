@@ -10,7 +10,7 @@ session_start();
     $query = "SELECT at.usn , s.Name , at.status from attendance as at , student as s where at.usn = s.usn AND at.subcode = '$subcode' AND at.date = '$sqldate'";
     $result = mysqli_query($con,$query);
     $rowcount = mysqli_num_rows($result);
-    
+
 
 
 ?>

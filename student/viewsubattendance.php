@@ -3,14 +3,12 @@ session_start();
     include("connection.php");
     include("functions.php");
     $subcode = $_SESSION['subcode'];
-    $sqldate = $_SESSION['date'];
 
 
 
-    $query = "SELECT at.usn , s.Name , at.status from attendance as at , student as s where at.usn = s.usn AND at.subcode = '$subcode' AND at.date = '$sqldate'";
+    $query = "SELECT at.usn , s.Name , at.attended from attends as at , student as s where at.usn = s.usn AND at.subcode = '$subcode'";
     $result = mysqli_query($con,$query);
     $rowcount = mysqli_num_rows($result);
-    
 
 
 ?>
@@ -19,7 +17,7 @@ session_start();
     <tr>
         <td><b>usn</b></td>
         <td><b>name</b></td>
-        <td><b>status</b></td>
+        <td><b>attended</b></td>
 
     </tr>
 <?php
@@ -29,11 +27,7 @@ session_start();
     <tr>
         <td><?php echo $row["usn"] ?></td>
         <td><?php echo $row["Name"] ?></td>
-        <td><?php if($row["status"] == 1)
-                    echo "present";
-                  else {
-                      echo "absent";
-                  }?></td>
+        <td><?php echo $row["attended"] ?></td>
 
     </tr>
 <?php
