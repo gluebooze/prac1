@@ -13,47 +13,47 @@ session_start();
         <meta charset="utf-8">
         <title></title>
     </head>
-    <body>
+    <body style="background-color:skyblue;">
       <center>
       <style>
           .butta{
           background-color: #008080 ;
           border-color: black;
-          border-style: solid;
+          border-style:hidden;
           color: black;
           padding: 15px 32px;
           text-align: center;
           text-decoration: none;
           display: inline-block;
           font-size: 12px;
-          margin: 4px 2px;
+          margin: 2px 1px;
           cursor: pointer;
           }
           .butt1{
           background-color: tomato ;
           border-color: black;
-          border-style: solid;
+          border-style:none;
           color: black;
           padding: 15px 32px;
           text-align: center;
           text-decoration: none;
           display: inline-block;
           font-size: 12px;
-          margin: 4px 2px;
+          margin: 2px 1px;
           cursor: pointer;
           }
           </style>
-        <a href="logout.php" align="right" class="butta">logout</a>
+        <a href="logout.php" align="right" class="butta"><b>logout</a>
         <br><br>
-        <a href="addstudent.php" class="butta">
-            <button <b> >Add Student</button>
-        </a><br><br><br><br>
-        <a href="addsubject.php" class="butta">
-            <button <b> >Add Subject</button>
-        </a><br><br><br><br>
+        <a href="addstudent.php">
+            <button class="butta"><b>Add Student</button>
+        </a><br><br>
+        <a href="addsubject.php">
+            <button class="butta"><b> Add Subject</button>
+        </a><br><br>
 
 
-        Add Student to subject <br>
+        <p class="butt1"><i><b>Add Student to subject</p> <br>
         <form method="post">
 
 
@@ -82,7 +82,8 @@ session_start();
                 die;
             }
         ?>
-        take attendence <br>
+        <p class="butt1">take attendence</p>
+         <br>
         <form method="post">
 
 
@@ -112,7 +113,8 @@ session_start();
             }
         ?>
 
-        view attendence <br>
+        <p class="butt1">view attendence </p>
+        <br>
         <form method="post">
 
 
@@ -142,7 +144,8 @@ session_start();
             }
         ?>
 
-        view attendence on date <br>
+        <p>view attendence on date </p>
+        <br>
         <form method="post">
 
 
@@ -159,8 +162,8 @@ session_start();
             ?>
 
         </select>
-        <input type="date" name="date" value="date" class="butt1"><br><br><br><br>
-        <input type="submit" name="go3" class="butt1"><br><br><br><br>
+        <input type="date" name="date" value="date" class="butt1"><br><br>
+        <input type="submit" &nbsp; name="go3" class="butt1"><br><br>
         </form>
         <?php
             if(isset($_POST['go3'])){
