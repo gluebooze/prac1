@@ -32,46 +32,18 @@ session_start();
         <title></title>
     </head>
     <body>
-      <style>
-          .butta{
-          background-color: #008080 ;
-          border-color: black;
-          border-style: solid;
-          color: black;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 12px;
-          margin: 4px 2px;
-          cursor: pointer;
-          }
-          .butt1{
-          background-color: tomato ;
-          border-color: black;
-          border-style: solid;
-          color: black;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 12px;
-          margin: 4px 2px;
-          cursor: pointer;
-          }
-          </style>
         <form  method="post">
 
-            <div class="butt1">usn</div>
-            <input type="text" name="usn"><br><br><br><br>
+            <div style="font-size: 15px; margin:10px;">usn</div>
+            <input type="text" name="usn"><br><br>
 
-            <div class="butt1">Name</div>
-            <input type="text" name="name"><br><br><br><br>
+            <div style="font-size: 15px; margin:10px;">Name</div>
+            <input type="text" name="name"><br><br>
 
-            <div class="butt1"">Phone no</div>
-            <input type="number" name="phone"><br><br><br><br>
+            <div style="font-size: 15px; margin:10px;">Phone no</div>
+            <input type="number" name="phone"><br><br>
 
-            <input type="submit" value="Add Student"><br><br><br><br>
+            <input type="submit" value="Add Student"><br><br>
             <a href="home.php">Go to home</a>
         </form>
     </body>

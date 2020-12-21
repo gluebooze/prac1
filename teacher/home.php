@@ -13,47 +13,18 @@ session_start();
         <meta charset="utf-8">
         <title></title>
     </head>
-    <body style="background-color:skyblue;">
-      <center>
-      <style>
-          .butta{
-          background-color: #008080 ;
-          border-color: black;
-          border-style:hidden;
-          color: black;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 12px;
-          margin: 2px 1px;
-          cursor: pointer;
-          }
-          .butt1{
-          background-color: tomato ;
-          border-color: black;
-          border-style:none;
-          color: black;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 12px;
-          margin: 2px 1px;
-          cursor: pointer;
-          }
-          </style>
-        <a href="logout.php" align="right" class="butta"><b>logout</a>
+    <body>
+        <a href="logout.php" align="right">logout</a>
         <br><br>
         <a href="addstudent.php">
-            <button class="butta"><b>Add Student</button>
+            <button>Add Student</button>
         </a><br><br>
         <a href="addsubject.php">
-            <button class="butta"><b> Add Subject</button>
+            <button>Add Subject</button>
         </a><br><br>
 
 
-        <p class="butt1"><i><b>Add Student to subject</p> <br>
+        Add Student to subject <br>
         <form method="post">
 
 
@@ -82,8 +53,7 @@ session_start();
                 die;
             }
         ?>
-        <p class="butt1">take attendence</p>
-         <br>
+        take attendence <br>
         <form method="post">
 
 
@@ -113,8 +83,7 @@ session_start();
             }
         ?>
 
-        <p class="butt1">view attendence </p>
-        <br>
+        view attendence <br>
         <form method="post">
 
 
@@ -144,8 +113,7 @@ session_start();
             }
         ?>
 
-        <p>view attendence on date </p>
-        <br>
+        view attendence on date <br>
         <form method="post">
 
 
@@ -162,8 +130,8 @@ session_start();
             ?>
 
         </select>
-        <input type="date" name="date" value="date" class="butt1"><br><br>
-        <input type="submit" &nbsp; name="go3" class="butt1"><br><br>
+        <input type="date" name="date" value="date"><br><br>
+        <input type="submit" name="go3" />
         </form>
         <?php
             if(isset($_POST['go3'])){
@@ -177,6 +145,6 @@ session_start();
                 die;
             }
         ?>
-</center>
+
     </body>
 </html>
