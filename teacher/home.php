@@ -14,14 +14,43 @@ session_start();
         <title></title>
     </head>
     <body>
-        <a href="logout.php" align="right">logout</a>
+      <center>
+      <style>
+          .butta{
+          background-color: #008080 ;
+          border-color: black;
+          border-style: solid;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 12px;
+          margin: 4px 2px;
+          cursor: pointer;
+          }
+          .butt1{
+          background-color: tomato ;
+          border-color: black;
+          border-style: solid;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 12px;
+          margin: 4px 2px;
+          cursor: pointer;
+          }
+          </style>
+        <a href="logout.php" align="right" class="butta">logout</a>
         <br><br>
-        <a href="addstudent.php">
-            <button>Add Student</button>
-        </a><br><br>
-        <a href="addsubject.php">
-            <button>Add Subject</button>
-        </a><br><br>
+        <a href="addstudent.php" class="butta">
+            <button <b> >Add Student</button>
+        </a><br><br><br><br>
+        <a href="addsubject.php" class="butta">
+            <button <b> >Add Subject</button>
+        </a><br><br><br><br>
 
 
         Add Student to subject <br>
@@ -130,8 +159,8 @@ session_start();
             ?>
 
         </select>
-        <input type="date" name="date" value="date"><br><br>
-        <input type="submit" name="go3" />
+        <input type="date" name="date" value="date" class="butt1"><br><br><br><br>
+        <input type="submit" name="go3" class="butt1"><br><br><br><br>
         </form>
         <?php
             if(isset($_POST['go3'])){
@@ -145,6 +174,6 @@ session_start();
                 die;
             }
         ?>
-
+</center>
     </body>
 </html>

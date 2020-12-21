@@ -1,3 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <center>
+    <style>
+    .butt1{
+    background-color: tomato ;
+    border-color: black;
+    border-style: solid;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+    </style>
 <?php
 session_start();
     include("connection.php");
@@ -16,9 +37,9 @@ session_start();
 <form method="post">
 <table border="1" align="center">
     <tr>
-        <td><b>usn</b></td>
-        <td><b>name</b></td>
-        <td><b>status</b></td>
+        <td class="butt1"><b>usn</b></td><br><br><br><br>
+        <td class="butt1"><b>name</b></td><br><br><br><br>
+        <td class="butt1"><b>status</b></td><br><br><br><br>
 
     </tr>
 <?php
@@ -26,8 +47,8 @@ session_start();
         $row = mysqli_fetch_array($result);
 ?>
     <tr>
-        <td><?php echo $row["usn"] ?></td>
-        <td><?php echo $row["Name"] ?></td>
+        <td><?php echo $row["usn"] ?></td><br><br><br><br>
+        <td><?php echo $row["Name"] ?></td><br><br><br><br>
         <td><?php if($row["status"] == 1)
                     echo "present";
                   else {
@@ -39,6 +60,9 @@ session_start();
     }
  ?>
 </table><br>
-<a href="home.php">Go to home</a>
+<a href="home.php" ><b>Go to home</a>
 
 </form>
+</center>
+</body>
+</html>

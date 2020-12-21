@@ -65,44 +65,33 @@ session_start();
 </head>
 
 <body>
-    <style type="text/css">
-        #text {
-            height: 25px;
-            border-radius: 5px;
-            padding: 4px;
-            border: solid thin #aaa;
-        }
-
-        #button {
-            background-color: gray;
-            /* Grey */
-            width: 100px;
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
-
-        #box {
-            background-color: gray;
-            margin: auto;
-            width: 300px;
-            padding: 20px;
-        }
+  <center>
+  <style>
+      .butta{
+      background-color: #008080 ;
+      border-color: black;
+      border-style: solid;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
     </style>
-    <div id="box">
+    <div id="box" class="butta">
         <form method="post">
             <div style="font-size: 20px; margin:10px;">Login</div>
             <input type="text" name="username"><br><br>
-            <input type="password" name="password"><br><br>
-            <input type="submit" value="Login"><br><br>
-            <a href="signup.php">Click to Signup</a>
+            <input type="password" name="password"><br><br><br><br>
+            <input type="submit" value="Login"><br><br><br><br>
+            <a href="signup.php" style="font-size=15px;">Click to Signup</a>
         </form>
 
     </div>
+  </center>
 </body>
 
 </html>
