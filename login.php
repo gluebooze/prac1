@@ -55,54 +55,44 @@ session_start();
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    $title = 'Login';
+    require_once('header.php');?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-</head>
+    <section class="container-fluid">
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3" style="background: linear-gradient(to top right, #ffccff 0%, #ffcc99 100%);">
+                <form method="post" class="form-container">
+                    <div class="mb-1 text-center">
+                      <label  class="form-label"><h5>Login</h5></label>
+                  </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Username</label>
+                      <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-<body>
-    <style type="text/css">
-        #text {
-            height: 25px;
-            border-radius: 5px;
-            padding: 4px;
-            border: solid thin #aaa;
-        }
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div><br>
+                    <!-- <input type="submit" value="Login"><br><br> -->
 
-        #button {
-            background-color: gray;
-            /* Grey */
-            width: 100px;
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
 
-        #box {
-            background-color: gray;
-            margin: auto;
-            width: 300px;
-            padding: 20px;
-        }
-    </style>
-    <div id="box">
-        <form method="post">
+                    <a href="signup.php">Click to Signup</a>
+                </form>
+            </section>
+        </section>
+    </section>
+        <!-- <form method="post">
             <div style="font-size: 20px; margin:10px;">Login</div>
             <input type="text" name="username"><br><br>
             <input type="password" name="password"><br><br>
             <input type="submit" value="Login"><br><br>
             <a href="signup.php">Click to Signup</a>
-        </form>
+        </form> -->
 
-    </div>
-</body>
 
-</html>
+<?php require_once('footer.php');?>

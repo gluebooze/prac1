@@ -65,53 +65,65 @@ session_start();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    $title = 'Signup';
+    require_once('header.php');?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
 
-</head>
+    <section class="container-fluid">
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3" style="background: linear-gradient(to top right, #ffccff 0%, #ffcc99 100%);">
+                <form method="post" class="form-container">
+                    <div class="mb-1 text-center">
+                      <label  class="form-label"><h5>Signup</h5></label>
+                  </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Username</label>
+                      <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-<body>
-    <style type="text/css">
-        #text {
-            height: 25px;
-            border-radius: 5px;
-            padding: 4px;
-            border: solid thin #aaa;
-        }
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <select name="rolename" class="form-select" aria-label="Default select example">
+                          <option value="t">Teacher</option>
+                          <option value="s">Student</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Eid/usn</label>
+                      <input type="text" name="usn" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Name</label>
+                      <input type="text" name="name" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Phone no</label>
+                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Signup</button>
+                    </div><br>
+                    <!-- <input type="submit" value="Login"><br><br> -->
 
-        #button {
-            background-color: gray;
-            /* Grey */
-            width: 100px;
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
 
-        #box {
-            background-color: gray;
-            margin: auto;
-            width: 300px;
-            padding: 20px;
-        }
-    </style>
-    <div id="box">
+                    <a href="login.php">Click to Login</a>
+                </form>
+            </section>
+        </section>
+    </section>
+
+    <!-- <div id="box">
         <form method="post">
             <div style="font-size: 25px; margin:10px;">Signup</div><br>
             <div style="font-size: 15px; margin:10px;">Username</div>
             <input type="text" name="username"><br><br>
             <div style="font-size: 15px; margin:10px;">password</div>
             <input type="password" name="password" ><br><br>
-            <select name="rolename">
+            <select name="rolename" class="form-select" aria-label="Default select example">
               <option value="t">Teacher</option>
               <option value="s">Student</option>
 
@@ -127,7 +139,6 @@ session_start();
             <a href="login.php">Click to Login</a>
         </form>
 
-    </div>
-</body>
+    </div> -->
 
-</html>
+<?php require_once('footer.php');?>
