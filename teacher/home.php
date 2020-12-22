@@ -11,7 +11,7 @@ session_start();
     $title = 'Teacher';
     require_once('header.php');?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid" ><p class="fs-5"><?php echo "Hello ".(implode(",",($_SESSION['name']))); ?></p>
+        <div class="container-fluid" ><p class="fs-5"><?php echo (implode(",",($_SESSION['name']))); ?></p>
 
                  <a class="btn btn-danger" style="float: right; margin-top:1%; margin-right:1%" href="logout.php" align="right">logout</a>
 

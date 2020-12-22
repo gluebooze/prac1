@@ -21,8 +21,9 @@ session_start();
     require_once('header.php');?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid" ><p class="fs-5 text-primary"><?php echo $subname." on ".$sqldate2  ?></p>
-
+        <div class="container-fluid" ><p class="fs-5 text-primary"><?php echo $subname?></p>
+            <p class="fs-5 text-success"><?php echo $sqldate2  ?></p>
+            <a class="btn btn-danger" style="float: right; margin-top:1%; margin-right:1%" href="home.php" align="right">Go Home</a>
         </div>
     </nav>
     <section class="container-fluid">
@@ -54,7 +55,7 @@ session_start();
                     }
                  ?>
                 </table><br>
-                <a href="home.php">Go to home</a>
+                <!-- <a href="home.php">Go to home</a> -->
 
                 </form>
             </section>

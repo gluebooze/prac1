@@ -51,7 +51,7 @@ session_start();
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid" ><p class="fs-5 text-primary"><?php echo $subname  ?></p>
-
+            <a class="btn btn-danger" style="float: right; margin-top:1%; margin-right:1%" href="home.php" align="right">Go Home</a>
         </div>
     </nav>
 
