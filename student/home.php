@@ -30,7 +30,7 @@ session_start();
                 <form method="post">
 
 
-                <select name="subjectname2">
+                <select class="select" name="subjectname2">
                     <?php
 
                     $query1 = "SELECT subname FROM subject";
@@ -52,7 +52,7 @@ session_start();
                 <form method="post">
 
 
-                <select name="subjectname3">
+                <select class="select" name="subjectname3">
                     <?php
 
                     $query1 = "SELECT subname FROM subject";

@@ -36,7 +36,7 @@ session_start();
                 <form method="post">
 
 
-                <select name="subjectname">
+                <select class="select" name="subjectname">
                     <?php
                     $tempeid = $_SESSION['eid'];
                     $query1 = "SELECT subname FROM subject where eid = $tempeid";
@@ -57,7 +57,7 @@ session_start();
                 <form method="post">
 
 
-                <select name="subjectname1">
+                <select class="select" name="subjectname1">
                     <?php
                     $tempeid = $_SESSION['eid'];
                     $query1 = "SELECT subname FROM subject where eid = $tempeid";
@@ -77,7 +77,7 @@ session_start();
 
                 view attendence <br>
                 <form method="post">
-                <select name="subjectname2">
+                <select class="select" name="subjectname2">
                     <?php
                     $tempeid = $_SESSION['eid'];
                     $query1 = "SELECT subname FROM subject where eid = $tempeid";
@@ -96,7 +96,7 @@ session_start();
 
                 view attendence on date <br>
                 <form method="post">
-                <select name="subjectname3">
+                <select class="select" name="subjectname3">
                     <?php
                     $tempeid = $_SESSION['eid'];
                     $query1 = "SELECT subname FROM subject where eid = $tempeid";
