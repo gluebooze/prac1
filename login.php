@@ -54,7 +54,7 @@ session_start();
 
         }
         else{
-            echo "please enter some valid information!!";
+            
             ?>
             <script type="text/javascript">
                 window.alert("Please enter valid information");
