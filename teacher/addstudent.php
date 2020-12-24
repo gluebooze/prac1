@@ -18,7 +18,12 @@ session_start();
             //             insert into student (usn,Name,Phone) values ('$usn','$name','$phone')
             //             End";
             mysqli_query($con,$query);
-            echo "added ".$usn." ".$name;
+            ?>
+            <script type="text/javascript">
+                window.alert("Student added");
+            </script>
+            <?php
+            // echo "added ".$usn." ".$name;
 
         }else{
             echo "please enter in correct format";

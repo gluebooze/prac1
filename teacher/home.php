@@ -3,7 +3,7 @@ session_start();
     include("connection.php");
     include("functions.php");
     $tempeid = $_SESSION['eid'];
-    $_SESSION['name'] = mysqli_query($con,"SELECT name from teacher where eid = $tempeid")->fetch_assoc();
+    $_SESSION['name'] = mysqli_query($con,"SELECT name from teacher where eid = '$tempeid'")->fetch_assoc();
     //printing name via changing associative array to string
 
 ?>
@@ -39,7 +39,7 @@ session_start();
                 <select class="select" name="subjectname">
                     <?php
                     $tempeid = $_SESSION['eid'];
-                    $query1 = "SELECT subname FROM subject where eid = $tempeid";
+                    $query1 = "SELECT subname FROM subject where eid = '$tempeid'";
                     $result = mysqli_query($con,$query1);
 
                         while($rows = $result->fetch_assoc()){
@@ -60,7 +60,7 @@ session_start();
                 <select class="select" name="subjectname1">
                     <?php
                     $tempeid = $_SESSION['eid'];
-                    $query1 = "SELECT subname FROM subject where eid = $tempeid";
+                    $query1 = "SELECT subname FROM subject where eid = '$tempeid'";
                     $result = mysqli_query($con,$query1);
 
                         while($rows = $result->fetch_assoc()){
@@ -80,7 +80,7 @@ session_start();
                 <select class="select" name="subjectname2">
                     <?php
                     $tempeid = $_SESSION['eid'];
-                    $query1 = "SELECT subname FROM subject where eid = $tempeid";
+                    $query1 = "SELECT subname FROM subject where eid = '$tempeid'";
                     $result = mysqli_query($con,$query1);
 
                         while($rows = $result->fetch_assoc()){
@@ -99,7 +99,7 @@ session_start();
                 <select class="select" name="subjectname3">
                     <?php
                     $tempeid = $_SESSION['eid'];
-                    $query1 = "SELECT subname FROM subject where eid = $tempeid";
+                    $query1 = "SELECT subname FROM subject where eid = '$tempeid'";
                     $result = mysqli_query($con,$query1);
 
                         while($rows = $result->fetch_assoc()){
