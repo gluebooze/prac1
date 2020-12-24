@@ -20,7 +20,11 @@ session_start();
             $rows = mysqli_num_rows($result);
             echo " ".$rows." ";
             if($rows==0){
-                echo "please enter some valider information!!";
+                ?>
+                <script type="text/javascript">
+                    window.alert("Please enter valid information");
+                </script>
+                <?php
             }
             else{
 
@@ -51,6 +55,11 @@ session_start();
         }
         else{
             echo "please enter some valid information!!";
+            ?>
+            <script type="text/javascript">
+                window.alert("Please enter valid information");
+            </script>
+            <?php
         }
     }
 ?>

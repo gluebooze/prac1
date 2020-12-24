@@ -54,11 +54,20 @@ session_start();
                 mysqli_query($con,$query3);
             }
             else{
-                echo "user already exist!";
+
+                ?>
+                <script type="text/javascript">
+                    window.alert("user already exists!");
+                </script>
+                <?php
             }
         }
         else{
-            echo "please enter some valid information!!";
+            ?>
+            <script type="text/javascript">
+                window.alert("Please enter valid information");
+            </script>
+            <?php
         }
     }
 
