@@ -3,7 +3,7 @@ session_start();
     include("connection.php");
     include("functions.php");
     $tempusn = $_SESSION['usn'];
-    $_SESSION['name'] = mysqli_query($con,"SELECT Name from student where usn = $tempusn")->fetch_assoc();
+    $_SESSION['name'] = mysqli_query($con,"SELECT Name from student where usn = '$tempusn'")->fetch_assoc();
     //printing name via changing associative array to string
 ?>
 
