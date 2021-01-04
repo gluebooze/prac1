@@ -27,7 +27,7 @@ session_start();
             mysqli_query($con,$query);
             ?>
             <script type="text/javascript">
-                window.alert("Student added");
+                window.alert("Subject added");
             </script>
             <?php
 
